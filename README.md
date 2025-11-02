@@ -1,3 +1,8 @@
+
+
+---
+
+
 # Tecdia Submission - Jumbled Video Frame Reconstruction
 
 This repository contains my submission for the Tecdia Internship Challenge — a computer vision task to reconstruct a shuffled video from jumbled frames using feature-based matching, graph optimization, and optical flow smoothing.
@@ -37,6 +42,9 @@ The challenge evaluates problem-solving ability, algorithmic design, and practic
 ---
 
 ## Directory Structure
+
+```
+
 project/
 │
 ├── pair_scorer_mt.py
@@ -46,12 +54,13 @@ project/
 ├── requirements.txt
 ├── README.md
 │
-├── frames_full/ # Original shuffled frames (input)
-├── frames_out/ # Ordered frames (intermediate)
-├── output/ # Final output and order files
-│ ├── order_refined.txt
-│ └── reconstructed_cinematic.mp4
+├── frames_full/              # Original shuffled frames (input)
+├── frames_out/               # Ordered frames (intermediate)
+├── output/                   # Final output and order files
+│   ├── order_refined.txt
+│   └── reconstructed_cinematic.mp4
 
+````
 
 ---
 
@@ -67,11 +76,15 @@ venv\Scripts\activate        # For Windows
 source venv/bin/activate     # For macOS/Linux
 
 pip install -r requirements.txt
+````
 
-How to Run
+---
+
+## How to Run
 
 Run the scripts in the following sequence:
 
+```bash
 # Step 1: Compute pairwise similarity between frames
 python pair_scorer_mt.py
 
@@ -83,45 +96,61 @@ python write_ordered_frames.py
 
 # Step 4: Apply smoothing and motion blur to final output
 python smooth_motion_blur.py
+```
 
 The reconstructed video will be saved as:
 
+```
 output/reconstructed_cinematic.mp4
+```
 
-Requirements
+---
+
+## Requirements
 
 The project requires Python 3.9+ and the following libraries:
 
+```
 opencv-python
 numpy
 pandas
 scikit-image
 tqdm
-
+```
 
 These will be installed automatically when running:
 
+```
 pip install -r requirements.txt
-Output Files
-File	Description
-output/order_initial.txt	Initial order before refinement
-output/order_refined.txt	Final refined frame order
-output/reconstructed_cinematic.mp4	Smoothed reconstructed video
-frames_out/	Directory containing ordered frames
+```
 
-----------------------------------------------------------------------------------------
-Author
+---
 
-Khushi Wadhawan
+## Output Files
+
+| File                               | Description                         |
+| ---------------------------------- | ----------------------------------- |
+| output/order_initial.txt           | Initial order before refinement     |
+| output/order_refined.txt           | Final refined frame order           |
+| output/reconstructed_cinematic.mp4 | Smoothed reconstructed video        |
+| frames_out/                        | Directory containing ordered frames |
+
+---
+
+## Author
+
+**Khushi Wadhawan**
 B.Tech - Computer Science and Engineering
 Vellore Institute of Technology
 
-Submission for Tecdia Internship Selection Challenge
+Submission for **Tecdia Internship Selection Challenge**
 
-Notes
+---
 
-Large folders such as frames_full/ and frames_out/ are excluded from GitHub due to size constraints.
+## Notes
 
-The scripts are modular — you can adjust feature extraction, similarity metrics, or optimization strategies independently.
+* Large folders such as `frames_full/` and `frames_out/` are excluded from GitHub due to size constraints.
+* The scripts are modular — you can adjust feature extraction, similarity metrics, or optimization strategies independently.
+* Recommended to use a GPU-enabled environment for faster execution.
 
-Recommended to use a GPU-enabled environment for faster execution.
+
