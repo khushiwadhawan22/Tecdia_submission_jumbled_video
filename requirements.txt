@@ -1,0 +1,5 @@
+numpy==1.26.4
+opencv-python==4.10.0.84
+pandas==2.2.2
+scikit-image==0.25.2
+tqdm==4.67.1
